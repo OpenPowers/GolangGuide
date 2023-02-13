@@ -1,0 +1,891 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../c01_12/">
+      
+      
+        <link rel="next" href="../c01_14/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.12">
+    
+    
+      
+        <title>1.13 流程控制：理解 select 用法 - OpenPowers</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0d440cfe.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#113-select" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="OpenPowers" class="md-header__button md-logo" aria-label="OpenPowers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OpenPowers
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1.13 流程控制：理解 select 用法
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="OpenPowers" class="md-nav__button md-logo" aria-label="OpenPowers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    OpenPowers
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          C01
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          C01
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c01_01/" class="md-nav__link">
+        1.1 一文搞定开发环境的搭建
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c01_02/" class="md-nav__link">
+        1.2 五种变量创建的方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c01_03/" class="md-nav__link">
+        1.3 数据类型：整型与浮点型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c01_04/" class="md-nav__link">
+        1.4 数据类型：byte、rune与字符串
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c01_05/" class="md-nav__link">
+        1.5 数据类型：数组与切片
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c01_06/" class="md-nav__link">
+        1.6 数据类型：字典与布尔类型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c01_07/" class="md-nav__link">
+        1.7 数据类型：指针
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c01_08/" class="md-nav__link">
+        1.8 流程控制：if-else
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c01_09/" class="md-nav__link">
+        1.9 流程控制：switch-case
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c01_10/" class="md-nav__link">
+        1.10 流程控制：for 循环
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c01_11/" class="md-nav__link">
+        1.11 流程控制：goto 无条件跳转
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c01_12/" class="md-nav__link">
+        1.12 流程控制：defer 延迟语句
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          1.13 流程控制：理解 select 用法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        1.13 流程控制：理解 select 用法
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 最简单的例子
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 避免造成死锁
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-select" class="md-nav__link">
+    3.  select 随机性
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-select" class="md-nav__link">
+    4. select 的超时
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5. 读取/写入都可以
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6. 信道关闭也能命中
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6_1" class="md-nav__link">
+    6. 总结一下
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c01_14/" class="md-nav__link">
+        1.14 异常机制：panic 和 recover
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c01_15/" class="md-nav__link">
+        1.15 语法规则：理解语句块与作用域
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 最简单的例子
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 避免造成死锁
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-select" class="md-nav__link">
+    3.  select 随机性
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-select" class="md-nav__link">
+    4. select 的超时
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5. 读取/写入都可以
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6. 信道关闭也能命中
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6_1" class="md-nav__link">
+    6. 总结一下
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="113-select">1.13 流程控制：理解 select 用法</h1>
+<p><img alt="" src="http://image.iswbm.com/20200607145423.png" /></p>
+<p>前面写过两节关于 <code>switch-case</code> 的文章，分别是：</p>
+<p><a href="http://golang.iswbm.com/c01/c01_09.html">流程控制：switch-case</a></p>
+<p><a href="http://golang.iswbm.com/c01/c01_14.html">Go 语言中的类型断言</a></p>
+<p>今天要学习一个跟 <code>switch-case</code> 很像，但还有点<code>个人特色</code> 的 <code>select-case</code>，这一节本应该放在 <a href="http://golang.iswbm.com/c04/c04_03.html">学习 Go 协程：详解信道/通道</a> 里一起讲的，但是当时漏了，直到有读者给我提出，才注意到，今天就用这篇文章补充一下。</p>
+<p>跟 switch-case 相比，select-case 用法比较单一，它仅能用于 信道/通道 的相关操作。</p>
+<pre><code class="language-go">select {
+    case 表达式1:
+        &lt;code&gt;
+    case 表达式2:
+        &lt;code&gt;
+  default:
+    &lt;code&gt;
+}
+</code></pre>
+<p>接下来，我们来看几个例子帮助理解这个 select 的模型。</p>
+<h2 id="1">1. 最简单的例子</h2>
+<p>先创建两个信道，并在 select 前往 c2 发送数据</p>
+<pre><code class="language-go">package main
+
+import (
+    &quot;fmt&quot;
+)
+
+func main() {
+    c1 := make(chan string, 1)
+    c2 := make(chan string, 1)
+
+    c2 &lt;- &quot;hello&quot;
+
+    select {
+    case msg1 := &lt;-c1:
+      fmt.Println(&quot;c1 received: &quot;, msg1)
+    case msg2 := &lt;-c2:
+      fmt.Println(&quot;c2 received: &quot;, msg2)
+    default:
+      fmt.Println(&quot;No data received.&quot;)
+    }
+}
+</code></pre>
+<p>在运行 select 时，会遍历所有（如果有机会的话）的 case 表达式，只要有一个信道有接收到数据，那么 select 就结束，所以输出如下</p>
+<pre><code>c2 received:  hello
+</code></pre>
+<h2 id="2">2. 避免造成死锁</h2>
+<p>select 在执行过程中，必须命中其中的某一分支。</p>
+<p>如果在遍历完所有的 case 后，若没有命中（<code>命中</code>：也许这样描述不太准确，我本意是想说可以执行信道的操作语句）任何一个 case 表达式，就会进入 default 里的代码分支。</p>
+<p>但如果你没有写 default 分支，select 就会阻塞，直到有某个 case 可以命中，而如果一直没有命中，select 就会抛出 <code>deadlock</code> 的错误，就像下面这样子。</p>
+<pre><code class="language-go">package main
+
+import (
+    &quot;fmt&quot;
+)
+
+func main() {
+    c1 := make(chan string, 1)
+    c2 := make(chan string, 1)
+
+    // c2 &lt;- &quot;hello&quot;
+
+    select {
+    case msg1 := &lt;-c1:
+        fmt.Println(&quot;c1 received: &quot;, msg1)
+    case msg2 := &lt;-c2:
+        fmt.Println(&quot;c2 received: &quot;, msg2)
+        // default:
+        //  fmt.Println(&quot;No data received.&quot;)
+    }
+}
+
+</code></pre>
+<p>运行后输出如下</p>
+<pre><code>fatal error: all goroutines are asleep - deadlock!
+
+goroutine 1 [select]:
+main.main()
+        /Users/MING/GolandProjects/golang-test/main.go:13 +0x10f
+exit status 2
+</code></pre>
+<p><strong>解决这个问题的方法有两种</strong></p>
+<p>一个是，养成好习惯，在 select 的时候，也写好 default 分支代码，尽管你 default 下没有写任何代码。</p>
+<pre><code class="language-go">package main
+
+import (
+    &quot;fmt&quot;
+)
+
+func main() {
+    c1 := make(chan string, 1)
+    c2 := make(chan string, 1)
+
+  // c2 &lt;- &quot;hello&quot;
+
+    select {
+    case msg1 := &lt;-c1:
+        fmt.Println(&quot;c1 received: &quot;, msg1)
+    case msg2 := &lt;-c2:
+        fmt.Println(&quot;c2 received: &quot;, msg2)
+    default:
+
+    }
+}
+</code></pre>
+<p>另一个是，让其中某一个信道可以接收到数据</p>
+<pre><code class="language-go">package main
+
+import (
+    &quot;fmt&quot;
+    &quot;time&quot;
+)
+
+func main() {
+    c1 := make(chan string, 1)
+    c2 := make(chan string, 1)
+
+  // 开启一个协程，可以发送数据到信道
+    go func() {
+        time.Sleep(time.Second * 1)
+        c2 &lt;- &quot;hello&quot;
+    }()
+
+    select {
+    case msg1 := &lt;-c1:
+        fmt.Println(&quot;c1 received: &quot;, msg1)
+    case msg2 := &lt;-c2:
+        fmt.Println(&quot;c2 received: &quot;, msg2)
+    }
+}
+
+</code></pre>
+<h2 id="3-select">3.  select 随机性</h2>
+<p>之前学过 switch 的时候，知道了 switch 里的 case 是顺序执行的，但在 select 里却不是。</p>
+<p>通过下面这个例子的执行结果就可以看出</p>
+<p><img alt="" src="http://image.iswbm.com/20200402215126.png" /></p>
+<h2 id="4-select">4. select 的超时</h2>
+<p>当 case 里的信道始终没有接收到数据时，而且也没有 default 语句时，select 整体就会阻塞，但是有时我们并不希望 select 一直阻塞下去，这时候就可以手动设置一个超时时间。</p>
+<pre><code class="language-go">package main
+
+import (
+    &quot;fmt&quot;
+    &quot;time&quot;
+)
+
+func makeTimeout(ch chan bool, t int) {
+    time.Sleep(time.Second * time.Duration(t))
+    ch &lt;- true
+}
+
+func main() {
+    c1 := make(chan string, 1)
+    c2 := make(chan string, 1)
+    timeout := make(chan bool, 1)
+
+    go makeTimeout(timeout, 2)
+
+    select {
+    case msg1 := &lt;-c1:
+        fmt.Println(&quot;c1 received: &quot;, msg1)
+    case msg2 := &lt;-c2:
+        fmt.Println(&quot;c2 received: &quot;, msg2)
+    case &lt;-timeout:
+        fmt.Println(&quot;Timeout, exit.&quot;)
+    }
+}
+</code></pre>
+<p>输出如下</p>
+<pre><code>Timeout, exit.
+</code></pre>
+<h2 id="5">5. 读取/写入都可以</h2>
+<p>上面例子里的 case，好像都只从信道中读取数据，但实际上，select 里的 case 表达式只要求你是对信道的操作即可，不管你是往信道写入数据，还是从信道读出数据。</p>
+<pre><code class="language-go">package main
+
+import (
+    &quot;fmt&quot;
+)
+
+func main() {
+    c1 := make(chan int, 2)
+
+    c1 &lt;- 2
+    select {
+    case c1 &lt;- 4:
+        fmt.Println(&quot;c1 received: &quot;, &lt;-c1)
+        fmt.Println(&quot;c1 received: &quot;, &lt;-c1)
+    default:
+        fmt.Println(&quot;channel blocking&quot;)
+    }
+}
+</code></pre>
+<p>输出如下</p>
+<pre><code>c1 received:  2
+c1 received:  4
+</code></pre>
+<h2 id="6">6. 信道关闭也能命中</h2>
+<p>上面的例子基本都是信道有数据可读取、或者信道可写入数据。其实当一个信道被 close 后，select 也能命中。</p>
+<p>举个例子</p>
+<pre><code class="language-go">package main
+
+import &quot;fmt&quot;
+
+func main()  {
+    c1 := make(chan int, 1)
+    c2 := make(chan int, 1)
+    close(c1)
+    for {
+        select {
+        case &lt;-c1:
+            fmt.Println(&quot;stop&quot;);
+                        return
+        case &lt;-c2:
+            fmt.Println(&quot;hhh&quot;)
+
+        }
+    }
+}
+
+</code></pre>
+<p>执行 <code>go run main.go</code> 后，会立马输出 stop</p>
+<pre><code>$ go run main.go 
+stop
+</code></pre>
+<h2 id="6_1">6. 总结一下</h2>
+<p>select 与 switch 原理很相似，但它的使用场景更特殊，学习了本篇文章，你需要知道如下几点区别：</p>
+<ol>
+<li>select 只能用于 channel 的操作(写入/读出/关闭)，而 switch 则更通用一些；</li>
+<li>select 的 case 是随机的，而 switch 里的 case 是顺序执行；</li>
+<li>select 要注意避免出现死锁，同时也可以自行实现超时机制；</li>
+<li>select 里没有类似 switch 里的 fallthrough 的用法；</li>
+<li>select 不能像 switch 一样接函数或其他表达式。</li>
+</ol>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.4b2c34cd.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,834 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../c01_04/">
+      
+      
+        <link rel="next" href="../c01_06/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.12">
+    
+    
+      
+        <title>1.5 数据类型：数组与切片 - OpenPowers</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0d440cfe.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#15" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="OpenPowers" class="md-header__button md-logo" aria-label="OpenPowers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OpenPowers
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1.5 数据类型：数组与切片
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="OpenPowers" class="md-nav__button md-logo" aria-label="OpenPowers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    OpenPowers
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          C01
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          C01
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c01_01/" class="md-nav__link">
+        1.1 一文搞定开发环境的搭建
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c01_02/" class="md-nav__link">
+        1.2 五种变量创建的方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c01_03/" class="md-nav__link">
+        1.3 数据类型：整型与浮点型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c01_04/" class="md-nav__link">
+        1.4 数据类型：byte、rune与字符串
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          1.5 数据类型：数组与切片
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        1.5 数据类型：数组与切片
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 数组
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 切片
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 思考题
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c01_06/" class="md-nav__link">
+        1.6 数据类型：字典与布尔类型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c01_07/" class="md-nav__link">
+        1.7 数据类型：指针
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c01_08/" class="md-nav__link">
+        1.8 流程控制：if-else
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c01_09/" class="md-nav__link">
+        1.9 流程控制：switch-case
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c01_10/" class="md-nav__link">
+        1.10 流程控制：for 循环
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c01_11/" class="md-nav__link">
+        1.11 流程控制：goto 无条件跳转
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c01_12/" class="md-nav__link">
+        1.12 流程控制：defer 延迟语句
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c01_13/" class="md-nav__link">
+        1.13 流程控制：理解 select 用法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c01_14/" class="md-nav__link">
+        1.14 异常机制：panic 和 recover
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c01_15/" class="md-nav__link">
+        1.15 语法规则：理解语句块与作用域
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 数组
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 切片
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 思考题
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="15">1.5 数据类型：数组与切片</h1>
+<p><img alt="" src="http://image.iswbm.com/20200607145423.png" /></p>
+<h2 id="1">1. 数组</h2>
+<p>数组是一个由固定长度的特定类型元素组成的序列，一个数组可以由零个或多个元素组成。因为数组的长度是固定的，所以在Go语言中很少直接使用数组。</p>
+<p>声明数组，并给该数组里的每个元素赋值（索引值的最小有效值和其他大多数语言一样是 0，不是1）</p>
+<pre><code class="language-go">// [3] 里的3 表示该数组的元素个数及容量
+var arr [3]int
+arr[0] = 1
+arr[1] = 2
+arr[2] = 3
+</code></pre>
+<p>声明并直接初始化数组 </p>
+<pre><code class="language-go">// 第一种方法
+var arr [3]int = [3]int{1,2,3}
+
+// 第二种方法
+arr := [3]int{1,2,3}
+</code></pre>
+<p>上面的 3 表示数组的元素个数 ，万一你哪天想往该数组中增加元素，你得对应修改这个数字，为了避免这种硬编码，你可以这样写，使用 <code>...</code> 让Go语言自己根据实际情况来分配空间。</p>
+<pre><code class="language-go">arr := [...]int{1,2,3}
+</code></pre>
+<p><code>[3]int</code> 和 <code>[4]int</code> 虽然都是数组，但他们却是不同的类型，使用 fmt 的 <code>%T</code> 可以查得。</p>
+<pre><code class="language-go">import (
+    &quot;fmt&quot;
+)
+
+func main() {
+    arr01 := [...]int{1, 2, 3}
+    arr02 := [...]int{1, 2, 3, 4}
+    fmt.Printf(&quot;%d 的类型是: %T\n&quot;, arr01, arr01)
+    fmt.Printf(&quot;%d 的类型是: %T&quot;, arr02, arr02)
+}
+</code></pre>
+<p>输出 如下</p>
+<pre><code>[1 2 3] 的类型是: [3]int
+[1 2 3 4] 的类型是: [4]int
+</code></pre>
+<p>如果你觉得每次写 <code>[3]int</code> 有点麻烦，你可以为 <code>[3]int</code> 定义一个类型字面量，也就是别名类型。</p>
+<p>使用 <code>type</code> 关键字可以定义一个类型字面量，后面只要你想定义一个容器大小为3，元素类型为int的数组 ，都可以使用这个别名类型。</p>
+<pre><code class="language-go">import (
+    &quot;fmt&quot;
+)
+
+func main() {
+    type arr3 [3]int
+
+    myarr := arr3{1,2,3}
+    fmt.Printf(&quot;%d 的类型是: %T&quot;, myarr, myarr)
+}
+</code></pre>
+<p>输出 如下</p>
+<pre><code>[1 2 3] 的类型是: main.arr3
+</code></pre>
+<p>其实定义数组还有一种偷懒的方法，比如下面这行代码</p>
+<pre><code class="language-go">arr:=[4]int{2:3}
+</code></pre>
+<p>打印 arr，会是</p>
+<pre><code class="language-go">[0 0 3 0]
+</code></pre>
+<p>可以看出<code>[4]int{2:3}</code>，4表示数组有4个元素，2 和 3 分别表示该数组索引为2（初始索引为0）的值为3，而其他没有指定值的，就是 int 类型的零值，即0。</p>
+<h2 id="2">2. 切片</h2>
+<p>切片（Slice）与数组一样，也是可以容纳若干类型相同的元素的容器。与数组不同的是，无法通过切片类型来确定其值的长度。每个切片值都会将数组作为其底层数据结构。我们也把这样的数组称为切片的底层数组。</p>
+<p>切片是对数组的一个连续片段的引用，所以切片是一个引用类型，这个片段可以是整个数组，也可以是由起始和终止索引标识的一些项的子集，需要注意的是，终止索引标识的项不包括在切片内（意思是这是个左闭右开的区间）</p>
+<pre><code class="language-go">import (
+    &quot;fmt&quot;
+)
+
+func main() {
+    myarr := [...]int{1, 2, 3}
+    fmt.Printf(&quot;%d 的类型是: %T&quot;, myarr[0:2], myarr[0:2])
+}
+</code></pre>
+<p>输出 如下</p>
+<pre><code>[1 2] 的类型是: []int
+</code></pre>
+<p>切片的构造，有四种方式</p>
+<ol>
+<li>对数组进行片段截取，主要有如下两种写法</li>
+</ol>
+<p>```go
+   // 定义一个数组
+   myarr := [5]int{1,2,3,4,5}</p>
+<p>// 【第一种】
+   // 1 表示从索引1开始，直到到索引为 2 (3-1)的元素
+   mysli1 := myarr[1:3] </p>
+<p>// 【第二种】
+   // 1 表示从索引1开始，直到到索引为 2 (3-1)的元素
+   mysli2 := myarr[1:3:4] 
+   ```</p>
+<p>如果你把上面的 <code>mysli1</code> 和 <code>mysli2</code> 打印出来，会发现他们居然是一样的。那第二种的 <code>myarr[1:3:4]</code> 的 4有什么用呢？</p>
+<p>在切片时，若不指定第三个数，那么切片终止索引会一直到原数组的最后一个数。而如果指定了第三个数，那么切片终止索引只会到原数组的该索引值。</p>
+<p>用下面这段代码来验证一下</p>
+<p>```go
+   package main</p>
+<p>import "fmt"</p>
+<p>func main(){
+       myarr := [5]int{1,2,3,4,5}
+       fmt.Printf("myarr 的长度为：%d，容量为：%d\n", len(myarr), cap(myarr))</p>
+<pre><code>   mysli1 := myarr[1:3]
+   fmt.Printf("mysli1 的长度为：%d，容量为：%d\n", len(mysli1), cap(mysli1))
+   fmt.Println(mysli1)
+
+   mysli2 := myarr[1:3:4]
+   fmt.Printf("mysli2 的长度为：%d，容量为：%d\n", len(mysli2), cap(mysli2))
+   fmt.Println(mysli2)
+</code></pre>
+<p>}
+   ```</p>
+<p>输出如下，说明切片的第三个数，影响的只是切片的容量，而不会影响长度</p>
+<p><code>myarr 的长度为：5，容量为：5
+   mysli1 的长度为：2，容量为：4
+   [2 3]
+   mysli2 的长度为：2，容量为：3
+   [2 3]</code></p>
+<ol>
+<li>从头声明赋值（例子如下）</li>
+</ol>
+<p>```go
+   // 声明字符串切片
+   var strList []string</p>
+<p>// 声明整型切片
+   var numList []int</p>
+<p>// 声明一个空切片
+   var numListEmpty = []int{}
+   ```</p>
+<ol>
+<li>使用 make 函数构造，make 函数的格式：<code>make( []Type, size, cap )</code></li>
+</ol>
+<p>这个函数刚好指出了，一个切片具备的三个要素：类型（Type），长度（size），容量（cap）</p>
+<p>```go
+   import (
+    "fmt"
+   )</p>
+<p>func main() {
+    a := make([]int, 2)
+    b := make([]int, 2, 10)
+    fmt.Println(a, b)
+    fmt.Println(len(a), len(b))
+    fmt.Println(cap(a), cap(b))
+   }
+   ```</p>
+<p>输出 如下 </p>
+<p><code>[0 0] [0 0]
+   2 2
+   2 10</code></p>
+<ol>
+<li>使用和数组一样，偷懒的方法</li>
+</ol>
+<p>```go
+   import (
+    "fmt"
+   )</p>
+<p>func main() {
+       a := []int{4:2}
+       fmt.Println(a)
+       fmt.Println(len(a), cap(a))
+   }
+   ```</p>
+<p>输出如下</p>
+<p><code>[0 0 0 0 2]
+   5 5</code></p>
+<p>关于 len 和 cap 的概念，可能不好理解 ，这里举个例子：</p>
+<ul>
+<li>
+<p>公司名，相当于字面量，也就是变量名。</p>
+</li>
+<li>
+<p>公司里的所有工位，相当于已分配到的内存空间</p>
+</li>
+<li>
+<p>公司里的员工，相当于元素。</p>
+</li>
+<li>
+<p>cap 代表你这个公司最多可以容纳多少员工</p>
+</li>
+<li>
+<p>len 代表你这个公司当前有多少个员工</p>
+</li>
+</ul>
+<p>由于 切片是引用类型，所以你不对它进行赋值的话，它的零值（默认值）是 nil</p>
+<pre><code class="language-go">var myarr []int
+fmt.Println(myarr == nil)
+// true
+</code></pre>
+<p>数组 与 切片 有相同点，它们都是可以容纳若干类型相同的元素的容器</p>
+<p>也有不同点，数组的容器大小固定，而切片本身是引用类型，它更像是 Python 中的 list ，我们可以对它 append 进行元素的添加。</p>
+<pre><code class="language-go">import (
+    &quot;fmt&quot;
+)
+
+func main() {
+    myarr := []int{1}
+    // 追加一个元素
+    myarr = append(myarr, 2)
+    // 追加多个元素
+    myarr = append(myarr, 3, 4)
+    // 追加一个切片, ... 表示解包，不能省略
+    myarr = append(myarr, []int{7, 8}...)
+    // 在第一个位置插入元素
+    myarr = append([]int{0}, myarr...)
+    // 在中间插入一个切片(两个元素)
+    myarr = append(myarr[:5], append([]int{5,6}, myarr[5:]...)...)
+    fmt.Println(myarr)
+}
+</code></pre>
+<p>输出 如下</p>
+<pre><code>[0 1 2 3 4 5 6 7 8]
+</code></pre>
+<h2 id="3">3. 思考题</h2>
+<p>最后，给你留道思考题。</p>
+<pre><code class="language-go">package main
+
+import (
+    &quot;fmt&quot;
+)
+
+func main() {
+    var numbers4 = [...]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+    myslice := numbers4[4:6:8]
+    fmt.Printf(&quot;myslice为 %d, 其长度为: %d\n&quot;, myslice, len(myslice))
+
+    myslice = myslice[:cap(myslice)]
+    fmt.Printf(&quot;myslice的第四个元素为: %d&quot;, myslice[3])
+}
+</code></pre>
+<p>为什么 myslice 的长度为2，却能访问到第四个元素</p>
+<pre><code>myslice为 [5 6], 其长度为: 2
+myslice的第四个元素为: 8
+</code></pre>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.4b2c34cd.min.js"></script>
+      
+    
+  </body>
+</html>
