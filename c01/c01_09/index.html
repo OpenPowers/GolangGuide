@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../c01_06/">
+        <link rel="prev" href="../c01_08/">
       
       
-        <link rel="next" href="../c01_08/">
+        <link rel="next" href="../c01_10/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.12">
     
     
       
-        <title>1.7 数据类型：指针 - OpenPowers</title>
+        <title>1.9 流程控制：switch-case - OpenPowers</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#17" class="md-skip">
+        <a href="#19-switch-case" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1.7 数据类型：指针
+              1.9 流程控制：switch-case
             
           </span>
         </div>
@@ -213,14 +213,14 @@
       
       
         <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-          GolangGuide
+          C01
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
-          GolangGuide
+          C01
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -312,80 +312,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          1.7 数据类型：指针
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../c01_07/" class="md-nav__link">
         1.7 数据类型：指针
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#0" class="md-nav__link">
-    0. 什么是指针
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    1. 指针的创建
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    2. 指针的类型
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    3. 指针的零值
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    4. 指针与切片
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -409,11 +340,94 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../c01_09/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          1.9 流程控制：switch-case
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         1.9 流程控制：switch-case
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0" class="md-nav__link">
+    0. 语句模型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 最简单的示例
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-case" class="md-nav__link">
+    2. 一个 case 多个条件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-case" class="md-nav__link">
+    3. case 条件常量不能重复
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-switch" class="md-nav__link">
+    4. switch 后可接函数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-switch" class="md-nav__link">
+    5. switch 可不接表达式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-switch" class="md-nav__link">
+    6. switch 的穿透能力
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -537,35 +551,49 @@
       
         <li class="md-nav__item">
   <a href="#0" class="md-nav__link">
-    0. 什么是指针
+    0. 语句模型
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
-    1. 指针的创建
+    1. 最简单的示例
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    2. 指针的类型
+  <a href="#2-case" class="md-nav__link">
+    2. 一个 case 多个条件
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    3. 指针的零值
+  <a href="#3-case" class="md-nav__link">
+    3. case 条件常量不能重复
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    4. 指针与切片
+  <a href="#4-switch" class="md-nav__link">
+    4. switch 后可接函数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-switch" class="md-nav__link">
+    5. switch 可不接表达式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-switch" class="md-nav__link">
+    6. switch 的穿透能力
   </a>
   
 </li>
@@ -586,154 +614,192 @@
 
 
 
-<h1 id="17">1.7 数据类型：指针</h1>
+<h1 id="19-switch-case">1.9 流程控制：switch-case</h1>
 <p><img alt="" src="http://image.iswbm.com/20200607145423.png" /></p>
-<h2 id="0">0. 什么是指针</h2>
-<p>当我们定义一个变量 name</p>
-<pre><code class="language-go">var name string = &quot;Go编程时光&quot;
-</code></pre>
-<p>此时，name 是变量名，它只是编程语言中方便程序员编写和理解代码的一个标签。</p>
-<p>当我们访问这个标签时，机算机会返回给我们它指向的内存地址里存储的值：<code>Go编程时光</code>。</p>
-<p>出于某些需要，我们会将这个内存地址赋值给另一个变量名，通常叫做 ptr（pointer的简写），而这个变量，我们称之为指针变量。</p>
-<p>换句话说，指针变量（一个标签）的值是指针，也就是内存地址。</p>
-<p>根据变量指向的值，是否是内存地址，我把变量分为两种：</p>
+<p>Go里的流程控制方法还是挺丰富，整理了下有如下这么多种：</p>
 <ul>
-<li>普通变量：存数据值本身</li>
-<li>指针变量：存值的内存地址</li>
+<li>if - else 条件语句</li>
+<li>switch - case 选择语句</li>
+<li>for - range 循环语句</li>
+<li>goto 无条件跳转语句</li>
+<li>defer 延迟执行</li>
 </ul>
-<h2 id="1">1. 指针的创建</h2>
-<p>指针创建有三种方法</p>
-<p><strong>第一种方法</strong></p>
-<p>先定义对应的变量，再通过变量取得内存地址，创建指针</p>
-<pre><code class="language-go">// 定义普通变量
-aint := 1
-// 定义指针变量
-ptr := &amp;aint     
+<p>上一篇讲了 if  -else 条件语句，今天先来讲讲 switch - case 选择语句。</p>
+<h2 id="0">0. 语句模型</h2>
+<p>Go 里的选择语句模型是这样的</p>
+<pre><code class="language-go">switch 表达式 {
+    case 表达式1:
+        代码块
+    case 表达式2:
+        代码块
+    case 表达式3:
+        代码块
+    case 表达式4:
+        代码块
+    case 表达式5:
+        代码块
+    default:
+        代码块
+}
 </code></pre>
-<p><strong>第二种方法</strong></p>
-<p>先创建指针，分配好内存后，再给指针指向的内存地址写入对应的值。</p>
-<pre><code class="language-go">// 创建指针
-astr := new(string)
-// 给指针赋值
-*astr = &quot;Go编程时光&quot;
-</code></pre>
-<p><strong>第三种方法</strong></p>
-<p>先声明一个指针变量，再从其他变量取得内存地址赋值给它</p>
-<pre><code class="language-go">aint := 1
-var bint *int  // 声明一个指针
-bint = &amp;aint   // 初始化
-</code></pre>
-<p>上面的三段代码中，指针的操作都离不开这两个符号：</p>
-<ul>
-<li><code>&amp;</code> ：从一个普通变量中取得内存地址</li>
-<li><code>*</code>：当<code>*</code>在赋值操作符（=）的右边，是从一个指针变量中取得变量值，当<code>*</code>在赋值操作符（=）的左边，是指该指针指向的变量</li>
-</ul>
-<p>通过下面这段代码，你可以熟悉这两个符号的用法</p>
-<pre><code class="language-go">package main
-
-import &quot;fmt&quot;
+<p>拿 switch 后的表达式分别和 case 后的表达式进行对比，只要有一个 case 满足条件，就会执行对应的代码块，然后直接退出 switch - case ，如果 一个都没有满足，才会执行 default 的代码块。</p>
+<h2 id="1">1. 最简单的示例</h2>
+<p>switch 后接一个你要判断变量 <code>education</code> （学历），然后 case 会拿这个 变量去和它后面的表达式（可能是常量、变量、表达式等）进行判等。</p>
+<p>如果相等，就执行相应的代码块。如果不相等，就接着下一个 case。</p>
+<pre><code class="language-go">import &quot;fmt&quot;
 
 func main() {
-    aint := 1     // 定义普通变量
-    ptr := &amp;aint  // 定义指针变量
-    fmt.Println(&quot;普通变量存储的是：&quot;, aint)
-    fmt.Println(&quot;普通变量存储的是：&quot;, *ptr)
-    fmt.Println(&quot;指针变量存储的是：&quot;, &amp;aint)
-    fmt.Println(&quot;指针变量存储的是：&quot;, ptr)
+    education := &quot;本科&quot;
+
+    switch education {
+    case &quot;博士&quot;:
+        fmt.Println(&quot;我是博士&quot;)
+    case &quot;研究生&quot;:
+        fmt.Println(&quot;我是研究生&quot;)
+    case &quot;本科&quot;:
+        fmt.Println(&quot;我是本科生&quot;)
+    case &quot;大专&quot;:
+        fmt.Println(&quot;我是大专生&quot;)
+    case &quot;高中&quot;:
+        fmt.Println(&quot;我是高中生&quot;)
+    default:
+        fmt.Println(&quot;学历未达标..&quot;)
+    }
 }
+
 </code></pre>
 <p>输出如下</p>
-<pre><code>普通变量存储的是： 1
-普通变量存储的是： 1
-指针变量存储的是： 0xc0000100a0
-指针变量存储的是： 0xc0000100a0
+<pre><code>我是本科生
 </code></pre>
-<p>要想打印指针指向的内存地址，方法有两种</p>
-<pre><code class="language-go">// 第一种
-fmt.Printf(&quot;%p&quot;, ptr)
-
-// 第二种
-fmt.Println(ptr)
-</code></pre>
-<h2 id="2">2. 指针的类型</h2>
-<p>我们知道字符串的类型是 string，整型是int，那么指针如何表示呢？</p>
-<p>写段代码试验一下就知道了</p>
-<pre><code class="language-go">package main
-
-import &quot;fmt&quot;
+<h2 id="2-case">2. 一个 case 多个条件</h2>
+<p>case 后可以接多个多个条件，多个条件之间是 <code>或</code> 的关系，用逗号相隔。</p>
+<pre><code class="language-go">import &quot;fmt&quot;
 
 func main() {
-    astr := &quot;hello&quot;
-    aint := 1
-    abool := false
-    arune := 'a'
-    afloat := 1.2
+    month := 2
 
-    fmt.Printf(&quot;astr 指针类型是：%T\n&quot;, &amp;astr)
-    fmt.Printf(&quot;aint 指针类型是：%T\n&quot;, &amp;aint)
-    fmt.Printf(&quot;abool 指针类型是：%T\n&quot;, &amp;abool)
-    fmt.Printf(&quot;arune 指针类型是：%T\n&quot;, &amp;arune)
-    fmt.Printf(&quot;afloat 指针类型是：%T\n&quot;, &amp;afloat)
-}
-</code></pre>
-<p>输出如下，可以发现用 <code>*</code>+所指向变量值的数据类型，就是对应的指针类型。</p>
-<pre><code>astr 指针类型是：*string
-aint 指针类型是：*int
-abool 指针类型是：*bool
-arune 指针类型是：*int32
-afloat 指针类型是：*float64
-</code></pre>
-<p>所以若我们定义一个只接收指针类型的参数的函数，可以这么写</p>
-<pre><code>func mytest(ptr *int)  {
-    fmt.Println(*ptr)
-}
-</code></pre>
-<h2 id="3">3. 指针的零值</h2>
-<p>当指针声明后，没有进行初始化，其零值是 nil。</p>
-<pre><code class="language-go">func main() {  
-    a := 25
-    var b *int  // 声明一个指针
-
-    if b == nil {
-        fmt.Println(b)
-        b = &amp;a  // 初始化：将a的内存地址给b
-        fmt.Println(b)
+    switch month {
+    case 3, 4, 5:
+        fmt.Println(&quot;春天&quot;)
+    case 6, 7, 8:
+        fmt.Println(&quot;夏天&quot;)
+    case 9, 10, 11:
+        fmt.Println(&quot;秋天&quot;)
+    case 12, 1, 2:
+        fmt.Println(&quot;冬天&quot;)
+    default:
+        fmt.Println(&quot;输入有误...&quot;)
     }
 }
 </code></pre>
 <p>输出如下</p>
-<pre><code>&lt;nil&gt;
-0xc0000100a0
+<pre><code>冬天
 </code></pre>
-<h2 id="4">4. 指针与切片</h2>
-<p>切片与指针一样，都是引用类型。</p>
-<p>如果我们想通过一个函数改变一个数组的值，有两种方法</p>
-<ol>
-<li>将这个数组的切片做为参数传给函数</li>
-<li>将这个数组的指针做为参数传给函数</li>
-</ol>
-<p>尽管二者都可以实现我们的目的，但是按照 Go 语言的使用习惯，建议使用第一种方法，因为第一种方法，写出来的代码会更加简洁，易读。具体你可以参数下面两种方法的代码实现</p>
-<p><strong>使用切片</strong></p>
-<pre><code class="language-go">func modify(sls []int) {  
-    sls[0] = 90
-}
+<h2 id="3-case">3. case 条件常量不能重复</h2>
+<p>当 case 后接的是常量时，该常量只能出现一次。</p>
+<p>以下两种情况，在编译时，都会报错： duplicate case "male" in switch</p>
+<p><strong>错误案例一</strong></p>
+<pre><code class="language-go">gender := &quot;male&quot;
 
-func main() {  
-    a := [3]int{89, 90, 91}
-    modify(a[:])
-    fmt.Println(a)
+switch gender {
+    case &quot;male&quot;:
+        fmt.Println(&quot;男性&quot;)
+    // 与上面重复
+    case &quot;male&quot;:
+        fmt.Println(&quot;男性&quot;)
+    case &quot;female&quot;:
+        fmt.Println(&quot;女性&quot;)
 }
 </code></pre>
-<p><strong>使用指针</strong></p>
-<pre><code class="language-go">func modify(arr *[3]int) {  
-    (*arr)[0] = 90
+<p><strong>错误案例二</strong></p>
+<pre><code class="language-go">gender := &quot;male&quot;
+
+switch gender {
+    case &quot;male&quot;, &quot;male&quot;:
+        fmt.Println(&quot;男性&quot;)
+    case &quot;female&quot;:
+        fmt.Println(&quot;女性&quot;)
+}
+</code></pre>
+<h2 id="4-switch">4. switch 后可接函数</h2>
+<p>switch 后面可以接一个函数，只要保证 case 后的值类型与函数的返回值 一致即可。</p>
+<pre><code class="language-go">import &quot;fmt&quot;
+
+// 判断一个同学是否有挂科记录的函数
+// 返回值是布尔类型
+func getResult(args ...int) bool {
+    for _, i := range args {
+        if i &lt; 60 {
+            return false
+        }
+    }
+    return true
 }
 
-func main() {  
-    a := [3]int{89, 90, 91}
-    modify(&amp;a)
-    fmt.Println(a)
+func main() {
+    chinese := 80
+    english := 50
+    math := 100
+
+    switch getResult(chinese, english, math) {
+    // case 后也必须 是布尔类型
+    case true:
+        fmt.Println(&quot;该同学所有成绩都合格&quot;)
+    case false:
+        fmt.Println(&quot;该同学有挂科记录&quot;)
+    }
 }
+</code></pre>
+<h2 id="5-switch">5. switch 可不接表达式</h2>
+<p>switch 后可以不接任何变量、表达式、函数。</p>
+<p>当不接任何东西时，switch - case 就相当于 if - elseif - else</p>
+<pre><code class="language-go">score := 30
+
+switch {
+    case score &gt;= 95 &amp;&amp; score &lt;= 100:
+        fmt.Println(&quot;优秀&quot;)
+    case score &gt;= 80:
+        fmt.Println(&quot;良好&quot;)
+    case score &gt;= 60:
+        fmt.Println(&quot;合格&quot;)
+    case score &gt;= 0:
+        fmt.Println(&quot;不合格&quot;)
+    default:
+        fmt.Println(&quot;输入有误...&quot;)
+}
+</code></pre>
+<h2 id="6-switch">6. switch 的穿透能力</h2>
+<p>正常情况下 switch - case 的执行顺序是：只要有一个 case 满足条件，就会直接退出 switch - case ，如果 一个都没有满足，才会执行 default 的代码块。</p>
+<p>但是有一种情况是例外。</p>
+<p>那就是当  case 使用关键字 <code>fallthrough</code> 开启穿透能力的时候。</p>
+<pre><code class="language-go">s := &quot;hello&quot;
+switch {
+case s == &quot;hello&quot;:
+    fmt.Println(&quot;hello&quot;)
+    fallthrough
+case s != &quot;world&quot;:
+    fmt.Println(&quot;world&quot;)
+}
+</code></pre>
+<p>代码输出如下：</p>
+<pre><code>hello
+world
+</code></pre>
+<p>需要注意的是，fallthrough 只能穿透一层，意思是它让你直接执行下一个case的语句，而且不需要判断条件。</p>
+<pre><code class="language-go">s := &quot;hello&quot;
+switch {
+case s == &quot;hello&quot;:
+    fmt.Println(&quot;hello&quot;)
+    fallthrough
+case s == &quot;xxxx&quot;:
+    fmt.Println(&quot;xxxx&quot;)
+case s != &quot;world&quot;:
+    fmt.Println(&quot;world&quot;)
+}
+</code></pre>
+<p>输出如下，并不会输出 <code>world</code>（即使它符合条件）</p>
+<pre><code>hello
+xxxx
 </code></pre>
 
 

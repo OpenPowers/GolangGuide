@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../c01_13/">
+        <link rel="prev" href="../c01_07/">
       
       
-        <link rel="next" href="../c01_15/">
+        <link rel="next" href="../c01_09/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.12">
     
     
       
-        <title>1.14 异常机制：panic 和 recover - OpenPowers</title>
+        <title>1.8 流程控制：if-else - OpenPowers</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#114-panic-recover" class="md-skip">
+        <a href="#18-if-else" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1.14 异常机制：panic 和 recover
+              1.8 流程控制：if-else
             
           </span>
         </div>
@@ -213,14 +213,14 @@
       
       
         <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-          GolangGuide
+          C01
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
-          GolangGuide
+          C01
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -326,11 +326,73 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../c01_08/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          1.8 流程控制：if-else
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         1.8 流程控制：if-else
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 条件语句模型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 单分支判断
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 多分支判断
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 高级写法
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -410,73 +472,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          1.14 异常机制：panic 和 recover
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../c01_14/" class="md-nav__link">
         1.14 异常机制：panic 和 recover
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-panic" class="md-nav__link">
-    1. 触发panic
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-panic" class="md-nav__link">
-    2. 捕获 panic
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    3. 无法跨协程
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    4. 总结一下
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -529,29 +529,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-panic" class="md-nav__link">
-    1. 触发panic
+  <a href="#1" class="md-nav__link">
+    1. 条件语句模型
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-panic" class="md-nav__link">
-    2. 捕获 panic
+  <a href="#2" class="md-nav__link">
+    2. 单分支判断
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#3" class="md-nav__link">
-    3. 无法跨协程
+    3. 多分支判断
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#4" class="md-nav__link">
-    4. 总结一下
+    4. 高级写法
   </a>
   
 </li>
@@ -572,102 +572,95 @@
 
 
 
-<h1 id="114-panic-recover">1.14 异常机制：panic 和 recover</h1>
+<h1 id="18-if-else">1.8 流程控制：if-else</h1>
 <p><img alt="" src="http://image.iswbm.com/20200607145423.png" /></p>
-<p>编程语言一般都会有异常捕获机制，在 Python 中 是使用<code>raise</code> 和 <code>try-except</code> 语句来实现的异常抛出和异常捕获的。</p>
-<p>在 Golang 中，有不少常规错误，在编译阶段就能提前告警，比如语法错误或类型错误等，但是有些错误仅能在程序运行后才能发生，比如数组访问越界、空指针引用等，这些运行时错误会引起程序退出。</p>
-<p>当然能触发程序宕机退出的，也可以是我们自己，比如经过检查判断，当前环境无法达到我们程序进行的预期条件时（比如一个服务指定监听端口被其他程序占用），可以手动触发 panic，让程序退出停止运行。</p>
-<h2 id="1-panic">1. 触发panic</h2>
-<p>手动触发宕机，是非常简单的一件事，只需要调用 panic 这个内置函数即可，就像这样子</p>
-<pre><code class="language-go">package main
-
-func main() {
-    panic(&quot;crash&quot;)
+<h2 id="1">1. 条件语句模型</h2>
+<p>Go里的流程控制方法还是挺丰富，整理了下有如下这么多种：</p>
+<ul>
+<li>if - else 条件语句</li>
+<li>switch - case 选择语句</li>
+<li>for - range 循环语句</li>
+<li>goto 无条件跳转语句</li>
+<li>defer 延迟执行</li>
+</ul>
+<p>今天先来讲讲 if-else 条件语句</p>
+<p>Go 里的条件语句模型是这样的</p>
+<pre><code class="language-go">if 条件 1 {
+  分支 1
+} else if 条件 2 {
+  分支 2
+} else if 条件 ... {
+  分支 ...
+} else {
+  分支 else
 }
 </code></pre>
-<p>运行后，直接报错宕机</p>
-<pre><code class="language-shell">$ go run main.go
-go run main.go
-panic: crash
-
-goroutine 1 [running]:
-main.main()
-        E:/Go-Code/main.go:4 +0x40
-exit status 2
-</code></pre>
-<h2 id="2-panic">2. 捕获 panic</h2>
-<p>发生了异常，有时候就得捕获，就像 Python 中的<code>except</code> 一样，那 Golang 中是如何做到的呢？</p>
-<p>这就不得不引出另外一个内建函数 -- <code>recover</code>，它可以让程序在发生宕机后起生回生。</p>
-<p>但是 recover 的使用，有一个条件，就是它必须在 defer 函数中才能生效，其他作用域下，它是不工作的。</p>
-<p>这是一个简单的例子</p>
+<p>Go编译器，对于 <code>{</code> 和 <code>}</code> 的位置有严格的要求，它要求 else if （或 else）和 两边的花括号，必须在同一行。</p>
+<p>由于 Go是 强类型，所以要求你条件表达式必须严格返回布尔型的数据（nil 和 0 和 1 都不行，具体可查看《详解数据类型：字典与布尔类型》）。</p>
+<p>对于这个模型，分别举几个例子来看一下。</p>
+<h2 id="2">2. 单分支判断</h2>
+<p>只有一个 if ，没有 else</p>
 <pre><code class="language-go">import &quot;fmt&quot;
 
-func set_data(x int) {
-    defer func() {
-        // recover() 可以将捕获到的panic信息打印
-        if err := recover(); err != nil {
-            fmt.Println(err)
-        }
-    }()
-
-    // 故意制造数组越界，触发 panic
-    var arr [10]int
-    arr[x] = 88
-}
-
 func main() {
-    set_data(20)
-
-    // 如果能执行到这句，说明panic被捕获了
-    // 后续的程序能继续运行
-    fmt.Println(&quot;everything is ok&quot;)
+    age := 20
+    if age &gt; 18 {
+        fmt.Println(&quot;已经成年了&quot;)
+    } 
 }
 </code></pre>
-<p>运行后，输出如下</p>
-<pre><code class="language-go">$ go run main.go
-runtime error: index out of range [20] with length 10
-everything is ok
-</code></pre>
-<p>通常来说，不应该对进入 panic 宕机的程序做任何处理，但有时，需要我们可以从宕机中恢复，至少我们可以在程序崩溃前，做一些操作，举个例子，当 web 服务器遇到不可预料的严重问题时，在崩溃前应该将所有的连接关闭，如果不做任何处理，会使得客户端一直处于等待状态，如果 web 服务器还在开发阶段，服务器甚至可以将异常信息反馈到客户端，帮助调试。</p>
-<h2 id="3">3. 无法跨协程</h2>
-<p>从上面的例子，可以看到，即使 panic 会导致整个程序退出，但在退出前，若有 defer 延迟函数，还是得执行完 defer 。</p>
-<p>但是这个 defer 在多个协程之间是没有效果，在子协程里触发 panic，只能触发自己协程内的 defer，而不能调用 main 协程里的 defer 函数的。</p>
-<p>来做个实验就知道了</p>
-<pre><code class="language-go">import (
-    &quot;fmt&quot;
-    &quot;time&quot;
-)
-
-func main() {
-    // 这个 defer 并不会执行
-    defer fmt.Println(&quot;in main&quot;)
-
-    go func() {
-        defer println(&quot;in goroutine&quot;)
-        panic(&quot;&quot;)
-    }()
-
-    time.Sleep(2 * time.Second)
-}
-</code></pre>
-<p>输出如下</p>
-<pre><code>in goroutine
-panic:
-
-goroutine 6 [running]:
-main.main.func1()
-        E:/Go-Code/main.go:12 +0x7b
-created by main.main
-        E:/Go-Code/main.go:10 +0xbc
-exit status 2
-</code></pre>
-<h2 id="4">4. 总结一下</h2>
-<p>Golang 异常的抛出与捕获，依赖两个内置函数：</p>
+<p>如果条件里需要满足多个条件，可以使用 <code>&amp;&amp;</code> 和 <code>||</code></p>
 <ul>
-<li>panic：抛出异常，使程序崩溃</li>
-<li>recover：捕获异常，恢复程序或做收尾工作</li>
+<li><code>&amp;&amp;</code>：表示且，左右都需要为true，最终结果才能为 true，否则为 false</li>
+<li><code>||</code>：表示或，左右只要有一个为true，最终结果即为true，否则 为 false</li>
 </ul>
-<p>revocer 调用后，抛出的 panic 将会在此处终结，不会再外抛，但是 recover，并不能任意使用，它有强制要求，必须得在 defer 下才能发挥用途。</p>
+<pre><code class="language-go">import &quot;fmt&quot;
+
+func main() {
+    age := 20
+    gender := &quot;male&quot;
+    if (age &gt; 18 &amp;&amp; gender == &quot;male&quot;) {
+        fmt.Println(&quot;是成年男性&quot;)
+    }
+}
+</code></pre>
+<h2 id="3">3. 多分支判断</h2>
+<p>if - else</p>
+<pre><code class="language-go">import &quot;fmt&quot;
+
+func main() {
+    age := 20
+    if age &gt; 18 {
+        fmt.Println(&quot;已经成年了&quot;)
+    } else {
+        fmt.Println(&quot;还未成年&quot;)
+    }
+}
+</code></pre>
+<p>if - else if - else</p>
+<pre><code class="language-go">import &quot;fmt&quot;
+
+func main() {
+    age := 20
+    if age &gt; 18 {
+        fmt.Println(&quot;已经成年了&quot;)
+    } else if age &gt;12 {
+        fmt.Println(&quot;已经是青少年了&quot;)
+    } else {
+        fmt.Println(&quot;还不是青少年&quot;)
+    }
+}
+</code></pre>
+<h2 id="4">4. 高级写法</h2>
+<p>在 if 里可以允许先运行一个表达式，取得变量后，再对其进行判断，比如第一个例子里代码也可以写成这样</p>
+<pre><code class="language-go">import &quot;fmt&quot;
+
+func main() {
+    if age := 20;age &gt; 18 {
+        fmt.Println(&quot;已经成年了&quot;)
+    }
+}
+</code></pre>
 
 
 

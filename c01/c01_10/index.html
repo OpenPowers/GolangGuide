@@ -9,15 +9,17 @@
       
       
       
-        <link rel="prev" href="../c01_14/">
+        <link rel="prev" href="../c01_09/">
       
+      
+        <link rel="next" href="../c01_11/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.12">
     
     
       
-        <title>1.15 语法规则：理解语句块与作用域 - OpenPowers</title>
+        <title>1.10 流程控制：for 循环 - OpenPowers</title>
       
     
     
@@ -65,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#115" class="md-skip">
+        <a href="#110-for" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1.15 语法规则：理解语句块与作用域
+              1.10 流程控制：for 循环
             
           </span>
         </div>
@@ -211,14 +213,14 @@
       
       
         <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-          GolangGuide
+          C01
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
-          GolangGuide
+          C01
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -352,11 +354,80 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../c01_10/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          1.10 流程控制：for 循环
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         1.10 流程控制：for 循环
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0" class="md-nav__link">
+    0. 语句模型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 接一个条件表达式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 接三个表达式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    2. 不接表达式：无限循环
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-for-range" class="md-nav__link">
+    3. 接 for-range 语句
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -422,66 +493,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          1.15 语法规则：理解语句块与作用域
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../c01_15/" class="md-nav__link">
         1.15 语法规则：理解语句块与作用域
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    1. 显示语句块与隐式语句块
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    2. 四种作用域的理解
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    3. 静态作用域与动态作用域
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -520,22 +536,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#0" class="md-nav__link">
+    0. 语句模型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
-    1. 显示语句块与隐式语句块
+    1. 接一个条件表达式
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#2" class="md-nav__link">
-    2. 四种作用域的理解
+    2. 接三个表达式
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    3. 静态作用域与动态作用域
+  <a href="#2_1" class="md-nav__link">
+    2. 不接表达式：无限循环
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-for-range" class="md-nav__link">
+    3. 接 for-range 语句
   </a>
   
 </li>
@@ -556,110 +586,140 @@
 
 
 
-<h1 id="115">1.15 语法规则：理解语句块与作用域</h1>
+<h1 id="110-for">1.10 流程控制：for 循环</h1>
 <p><img alt="" src="http://image.iswbm.com/20200607145423.png" /></p>
-<p>由于 Go 使用的是词法作用域，而词法作用域依赖于语句块。所以在讲作用域时，需要先了解一下 Go 中的语句块是怎么一回事？</p>
-<h2 id="1">1. 显示语句块与隐式语句块</h2>
-<p>通俗地说，语句块是由花括弧（<code>{}</code>）所包含的一系列语句。</p>
-<p>语句块内部声明的名字是无法被外部块访问的。这个块决定了内部声明的名字的作用域范围，也就是作用域。</p>
-<p>用花括弧包含的语句块，属于显示语句块。</p>
-<p>在 Go 中还有很多的隐式语句块：</p>
+<p>Go里的流程控制方法还是挺丰富，整理了下有如下这么多种：</p>
 <ul>
-<li>主语句块：包括所有源码，对应内置作用域</li>
-<li>包语句块：包括该包中所有的源码（一个包可能会包括一个目录下的多个文件），对应包级作用域</li>
-<li>文件语句块：包括该文件中的所有源码，对应文件级作用域</li>
-<li>for 、if、switch等语句本身也在它自身的隐式语句块中，对应局部作用域</li>
+<li>if - else 条件语句</li>
+<li>switch - case 选择语句</li>
+<li>for - range 循环语句</li>
+<li>goto 无条件跳转语句</li>
+<li>defer 延迟执行</li>
 </ul>
-<p>前面三点好理解，第四点举几个例子</p>
-<p>for 循环完后，不能再使用变量 i </p>
-<pre><code class="language-go">for i := 0; i &lt; 5; i++ {
-    fmt.Println(i)
+<p>上一篇讲了switch - case 选择语句，今天先来讲讲 for  循环语句。</p>
+<h2 id="0">0. 语句模型</h2>
+<p>这是 for 循环的基本模型。</p>
+<pre><code>for [condition |  ( init; condition; increment ) | Range]
+{
+   statement(s);
 }
 </code></pre>
-<p>if 语句判断完后，同样不能再使用变量 i</p>
-<pre><code class="language-go">if i := 0; i &gt;= 0 {
-    fmt.Println(i)
+<p>可以看到 for 后面，可以接三种类型的表达式。</p>
+<ol>
+<li>接一个条件表达式</li>
+<li>接三个表达式</li>
+<li>接一个 range 表达式</li>
+</ol>
+<p>但其实还有第四种</p>
+<ol>
+<li>不接表达式</li>
+</ol>
+<h2 id="1">1. 接一个条件表达式</h2>
+<p>这个例子会打印 1 到 5 的数值。</p>
+<pre><code class="language-go">a := 1
+for a &lt;= 5 {
+    fmt.Println(a)
+    a ++ 
 }
 </code></pre>
-<p>switch 语句完了后，也是不是再使用变量 i</p>
-<pre><code class="language-go">switch i := 2; i * 4 {
-case 8:
-    fmt.Println(i)
-default:
-    fmt.Println(“default”)
-}
+<p>输出如下</p>
+<pre><code>1
+2
+3
+4
+5
 </code></pre>
-<p>且每个 switch 语句的子句都是一个隐式的语句块</p>
-<pre><code class="language-go">switch i := 2; i * 4 {
-case 8:
-    j := 0
-    fmt.Println(i, j)
-default:
-    // &quot;j&quot; is undefined here
-    fmt.Println(“default”)
-}
-// &quot;j&quot; is undefined here
-</code></pre>
-<h2 id="2">2. 四种作用域的理解</h2>
-<p>变量的声明，除了声明其类型，其声明的位置也有讲究，不同的位置决定了其拥有不同的作用范围，说白了就是我这个变量，在哪里可用，在哪里不可用。</p>
-<p>根据声明位置的不同，作用域可以分为以下四个类型：</p>
+<h2 id="2">2. 接三个表达式</h2>
+<p>for 后面，紧接着三个表达式，使用 <code>;</code> 分隔。</p>
+<p>这三个表达式，各有各的用途</p>
 <ul>
-<li>内置作用域：不需要自己声明，所有的关键字和内置类型、函数都拥有全局作用域</li>
-<li>包级作用域：必須函数外声明，在该包内的所有文件都可以访问</li>
-<li>文件级作用域：不需要声明，导入即可。一个文件中通过import导入的包名，只在该文件内可用</li>
-<li>局部作用域：在自己的语句块内声明，包括函数，for、if 等语句块，或自定义的 {} 语句块形成的作用域，只在自己的局部作用域内可用</li>
+<li>第一个表达式：初始化控制变量，在整个循环生命周期内，只运行一次；</li>
+<li>第二个表达式：设置循环控制条件，当返回true，继续循环，返回false，结束循环；</li>
+<li>第三个表达式：每次循完开始（除第一次）时，给控制变量增量或减量。</li>
 </ul>
-<p>以上的四种作用域，从上往下，范围从大到小，为了表述方便，我这里自己将范围大的作用域称为高层作用域，而范围小的称为低层作用域。</p>
-<p>对于作用域，有以下几点总结：</p>
-<ul>
-<li>低层作用域，可以访问高层作用域</li>
-<li>同一层级的作用域，是相互隔离的</li>
-<li>低层作用域里声明的变量，会覆盖高层作用域里声明的变量</li>
-</ul>
-<p>在这里要注意一下，不要将作用域和生命周期混为一谈。声明语句的作用域对应的是一个源代码的文本区域；它是一个编译时的属性。</p>
-<p>而一个变量的生命周期是指程序运行时变量存在的有效时间段，在此时间区域内它可以被程序的其他部分引用；是一个运行时的概念。</p>
-<h2 id="3">3. 静态作用域与动态作用域</h2>
-<p>根据局部作用域内变量的可见性，是否是静态不变，可以将编程语言分为如下两种：</p>
-<ul>
-<li>静态作用域，如 Go 语言</li>
-<li>动态作用域，如 Shell 语言</li>
-</ul>
-<p>具体什么是动态作用域，这里用 Shell 的代码演示一下，你就知道了</p>
-<pre><code class="language-python">#!/bin/bash
-func01() {
-    local value=1
-    func02
-}
-func02() {
-    echo &quot;func02 sees value as ${value}&quot;
-}
-
-# 执行函数
-func01
-func02
-</code></pre>
-<p>从代码中，可以看到在 func01 函数中定义了个局部变量 value，按理说，这个 value 变量只在该函数内可用，但由于在 shell 中的作用域是动态的，所以在 func01中也可以调用 func02 时，func02 可以访问到 value 变量，此时的 func02 作用域可以当成是 局部作用域中（func01）的局部作用域。</p>
-<p>但若脱离了 func01的执行环境，将其放在全局环境下或者其他函数中， func02 是访问不了 value 变量的。</p>
-<p>所以此时的输出结果是</p>
-<pre><code class="language-shell">func02 sees value as 1
-func02 sees value as 
-</code></pre>
-<p>但在 Go 中并不存在这种动态作用域，比如这段代码，在func01函数中，要想取得 name 这个变量，只能从func01的作用域或者更高层作用域里查找（文件级作用域，包级作用域和内置作用域），而不能从调用它的另一个局部作用域中（因为他们在层级上属于同一级）查找。</p>
+<p>这边的例子和上面的例子，是等价的。</p>
 <pre><code class="language-go">import &quot;fmt&quot;
 
-func func01() {
-    fmt.Println(&quot;在 func01 函数中，name：&quot;, name)
-}
-
-func main()  {
-    var name string = &quot;Python编程时光&quot;
-    fmt.Println(&quot;在 main 函数中，name：&quot;, name)
-
-    func01()
+func main() {
+    for i := 1; i &lt;= 5; i++ {
+        fmt.Println(i)
+    }
 }
 </code></pre>
-<p>因此你在执行这段代码时，会报错，提示在func01中的name还未定义。</p>
-<p>参考文章：https://studygolang.com/articles/12632</p>
+<p>输出如下 </p>
+<pre><code>1
+2
+3
+4
+5
+</code></pre>
+<h2 id="2_1">2. 不接表达式：无限循环</h2>
+<p>在 Go 语言中，没有 while 循环，如果要实现无限循环，也完全可以 for 来实现。</p>
+<p>当你不加任何的判断条件时， 就相当于你每次的判断都为 true，程序就会一直处于运行状态，但是一般我们并不会让程序处于死循环，在满足一定的条件下，可以使用关键字 <code>break</code> 退出循环体，也可以使用 <code>continue</code> 直接跳到下一循环。</p>
+<p>下面两种写法都是无限循环的写法。</p>
+<pre><code class="language-go">for {
+    代码块
+}
+
+// 等价于
+for ;; {
+    代码块
+}
+</code></pre>
+<p>举个例子</p>
+<pre><code class="language-go">import &quot;fmt&quot;
+
+func main() {
+    var i int = 1
+    for {
+        if i &gt; 5 {
+            break
+        }
+        fmt.Printf(&quot;hello, %d\n&quot;, i)
+        i++
+    }
+}
+</code></pre>
+<p>输出如下</p>
+<pre><code>hello, 1
+hello, 2
+hello, 3
+hello, 4
+hello, 5
+</code></pre>
+<h2 id="3-for-range">3. 接 for-range 语句</h2>
+<p>遍历一个可迭代对象，是一个很常用的操作。在 Go 可以使用 for-range 的方式来实现。</p>
+<p>range 后可接数组、切片，字符串等</p>
+<p>由于 range 会返回两个值：索引和数据，若你后面的代码用不到索引，需要使用 <code>_</code> 表示 。</p>
+<pre><code class="language-go">import &quot;fmt&quot;
+
+func main() {
+    myarr := [...]string{&quot;world&quot;, &quot;python&quot;, &quot;go&quot;}
+    for _, item := range myarr {
+        fmt.Printf(&quot;hello, %s\n&quot;, item)
+    }
+}
+</code></pre>
+<p>输出如下</p>
+<pre><code>hello, world
+hello, python
+hello, go
+</code></pre>
+<p>如果你用一个变量来接收的话，接收到的是索引</p>
+<pre><code class="language-go">import &quot;fmt&quot;
+
+func main() {
+    myarr := [...]string{&quot;world&quot;, &quot;python&quot;, &quot;go&quot;}
+    for i := range myarr {
+        fmt.Printf(&quot;hello, %v\n&quot;, i)
+    }
+}
+</code></pre>
+<p>输出如下</p>
+<pre><code>hello, 0
+hello, 1
+hello, 2
+</code></pre>
 
 
 
