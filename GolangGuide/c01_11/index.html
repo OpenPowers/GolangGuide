@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../c01_06/">
+        <link rel="prev" href="../c01_10/">
       
       
-        <link rel="next" href="../c01_08/">
+        <link rel="next" href="../c01_12/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.12">
     
     
       
-        <title>1.7 数据类型：指针 - OpenPowers</title>
+        <title>1.11 流程控制：goto 无条件跳转 - OpenPowers</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#17" class="md-skip">
+        <a href="#111-goto" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1.7 数据类型：指针
+              1.11 流程控制：goto 无条件跳转
             
           </span>
         </div>
@@ -187,7 +187,7 @@
   
     <li class="md-nav__item">
       <a href="../.." class="md-nav__link">
-        Home
+        文章目录
       </a>
     </li>
   
@@ -213,14 +213,14 @@
       
       
         <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-          C01
+          GolangGuide
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
-          C01
+          GolangGuide
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -312,80 +312,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          1.7 数据类型：指针
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../c01_07/" class="md-nav__link">
         1.7 数据类型：指针
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#0" class="md-nav__link">
-    0. 什么是指针
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    1. 指针的创建
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    2. 指针的类型
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    3. 指针的零值
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    4. 指针与切片
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -437,11 +368,73 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../c01_11/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          1.11 流程控制：goto 无条件跳转
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         1.11 流程控制：goto 无条件跳转
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0" class="md-nav__link">
+    0. 基本模型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 最简单的示例
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 如何使用？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 注意事项
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -537,35 +530,28 @@
       
         <li class="md-nav__item">
   <a href="#0" class="md-nav__link">
-    0. 什么是指针
+    0. 基本模型
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
-    1. 指针的创建
+    1. 最简单的示例
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#2" class="md-nav__link">
-    2. 指针的类型
+    2. 如何使用？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#3" class="md-nav__link">
-    3. 指针的零值
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    4. 指针与切片
+    3. 注意事项
   </a>
   
 </li>
@@ -586,154 +572,126 @@
 
 
 
-<h1 id="17">1.7 数据类型：指针</h1>
+<h1 id="111-goto">1.11 流程控制：goto 无条件跳转</h1>
 <p><img alt="" src="http://image.iswbm.com/20200607145423.png" /></p>
-<h2 id="0">0. 什么是指针</h2>
-<p>当我们定义一个变量 name</p>
-<pre><code class="language-go">var name string = &quot;Go编程时光&quot;
-</code></pre>
-<p>此时，name 是变量名，它只是编程语言中方便程序员编写和理解代码的一个标签。</p>
-<p>当我们访问这个标签时，机算机会返回给我们它指向的内存地址里存储的值：<code>Go编程时光</code>。</p>
-<p>出于某些需要，我们会将这个内存地址赋值给另一个变量名，通常叫做 ptr（pointer的简写），而这个变量，我们称之为指针变量。</p>
-<p>换句话说，指针变量（一个标签）的值是指针，也就是内存地址。</p>
-<p>根据变量指向的值，是否是内存地址，我把变量分为两种：</p>
+<p>Go里的流程控制方法还是挺丰富，整理了下有如下这么多种：</p>
 <ul>
-<li>普通变量：存数据值本身</li>
-<li>指针变量：存值的内存地址</li>
+<li>if - else 条件语句</li>
+<li>switch - case 选择语句</li>
+<li>for - range 循环语句</li>
+<li>goto 无条件跳转语句</li>
+<li>defer 延迟执行</li>
 </ul>
-<h2 id="1">1. 指针的创建</h2>
-<p>指针创建有三种方法</p>
-<p><strong>第一种方法</strong></p>
-<p>先定义对应的变量，再通过变量取得内存地址，创建指针</p>
-<pre><code class="language-go">// 定义普通变量
-aint := 1
-// 定义指针变量
-ptr := &amp;aint     
+<p>前面三种，我已经都讲过了，今天要讲讲 goto 的无条件跳转。</p>
+<p>很难想象在 Go 居然会保留 goto，因为很多人不建议使用 goto，所以在一些编程语言中甚至直接取消了 goto。</p>
+<p>我感觉 Go 既然保留，一定有人家的理由，只是我目前还没感受到。不管怎样，咱还是照常学习吧。</p>
+<h2 id="0">0. 基本模型</h2>
+<p><code>goto</code> 顾言思义，是跳转的意思。</p>
+<p>goto 后接一个标签，这个标签的意义是告诉 Go程序下一步要执行哪里的代码。</p>
+<p>所以这个标签如何放置，放置在哪里，是 goto 里最需要注意的。</p>
+<pre><code class="language-go">goto 标签;
+...
+...
+标签: 表达式;
 </code></pre>
-<p><strong>第二种方法</strong></p>
-<p>先创建指针，分配好内存后，再给指针指向的内存地址写入对应的值。</p>
-<pre><code class="language-go">// 创建指针
-astr := new(string)
-// 给指针赋值
-*astr = &quot;Go编程时光&quot;
-</code></pre>
-<p><strong>第三种方法</strong></p>
-<p>先声明一个指针变量，再从其他变量取得内存地址赋值给它</p>
-<pre><code class="language-go">aint := 1
-var bint *int  // 声明一个指针
-bint = &amp;aint   // 初始化
-</code></pre>
-<p>上面的三段代码中，指针的操作都离不开这两个符号：</p>
-<ul>
-<li><code>&amp;</code> ：从一个普通变量中取得内存地址</li>
-<li><code>*</code>：当<code>*</code>在赋值操作符（=）的右边，是从一个指针变量中取得变量值，当<code>*</code>在赋值操作符（=）的左边，是指该指针指向的变量</li>
-</ul>
-<p>通过下面这段代码，你可以熟悉这两个符号的用法</p>
-<pre><code class="language-go">package main
-
-import &quot;fmt&quot;
+<h2 id="1">1. 最简单的示例</h2>
+<p><code>goto</code> 可以打破原有代码执行顺序，直接跳转到某一行执行代码。</p>
+<pre><code class="language-go">import &quot;fmt&quot;
 
 func main() {
-    aint := 1     // 定义普通变量
-    ptr := &amp;aint  // 定义指针变量
-    fmt.Println(&quot;普通变量存储的是：&quot;, aint)
-    fmt.Println(&quot;普通变量存储的是：&quot;, *ptr)
-    fmt.Println(&quot;指针变量存储的是：&quot;, &amp;aint)
-    fmt.Println(&quot;指针变量存储的是：&quot;, ptr)
+
+    goto flag
+    fmt.Println(&quot;B&quot;)
+flag:
+    fmt.Println(&quot;A&quot;)
+
 }
 </code></pre>
-<p>输出如下</p>
-<pre><code>普通变量存储的是： 1
-普通变量存储的是： 1
-指针变量存储的是： 0xc0000100a0
-指针变量存储的是： 0xc0000100a0
+<p>执行结果，并不会输出 B ，而只会输出 A</p>
+<pre><code>A
 </code></pre>
-<p>要想打印指针指向的内存地址，方法有两种</p>
-<pre><code class="language-go">// 第一种
-fmt.Printf(&quot;%p&quot;, ptr)
-
-// 第二种
-fmt.Println(ptr)
-</code></pre>
-<h2 id="2">2. 指针的类型</h2>
-<p>我们知道字符串的类型是 string，整型是int，那么指针如何表示呢？</p>
-<p>写段代码试验一下就知道了</p>
-<pre><code class="language-go">package main
-
-import &quot;fmt&quot;
+<h2 id="2">2. 如何使用？</h2>
+<p><code>goto</code> 语句通常与条件语句配合使用。可用来实现条件转移， 构成循环，跳出循环体等功能。</p>
+<p>这边举一个例子，用 <code>goto</code> 的方式来实现一个打印 1到5 的循环。</p>
+<pre><code class="language-go">import &quot;fmt&quot;
 
 func main() {
-    astr := &quot;hello&quot;
-    aint := 1
-    abool := false
-    arune := 'a'
-    afloat := 1.2
-
-    fmt.Printf(&quot;astr 指针类型是：%T\n&quot;, &amp;astr)
-    fmt.Printf(&quot;aint 指针类型是：%T\n&quot;, &amp;aint)
-    fmt.Printf(&quot;abool 指针类型是：%T\n&quot;, &amp;abool)
-    fmt.Printf(&quot;arune 指针类型是：%T\n&quot;, &amp;arune)
-    fmt.Printf(&quot;afloat 指针类型是：%T\n&quot;, &amp;afloat)
-}
-</code></pre>
-<p>输出如下，可以发现用 <code>*</code>+所指向变量值的数据类型，就是对应的指针类型。</p>
-<pre><code>astr 指针类型是：*string
-aint 指针类型是：*int
-abool 指针类型是：*bool
-arune 指针类型是：*int32
-afloat 指针类型是：*float64
-</code></pre>
-<p>所以若我们定义一个只接收指针类型的参数的函数，可以这么写</p>
-<pre><code>func mytest(ptr *int)  {
-    fmt.Println(*ptr)
-}
-</code></pre>
-<h2 id="3">3. 指针的零值</h2>
-<p>当指针声明后，没有进行初始化，其零值是 nil。</p>
-<pre><code class="language-go">func main() {  
-    a := 25
-    var b *int  // 声明一个指针
-
-    if b == nil {
-        fmt.Println(b)
-        b = &amp;a  // 初始化：将a的内存地址给b
-        fmt.Println(b)
+    i := 1
+flag:
+    if i &lt;= 5 {
+        fmt.Println(i)
+        i++
+        goto flag
     }
 }
 </code></pre>
 <p>输出如下</p>
-<pre><code>&lt;nil&gt;
-0xc0000100a0
+<pre><code>1
+2
+3
+4
+5
 </code></pre>
-<h2 id="4">4. 指针与切片</h2>
-<p>切片与指针一样，都是引用类型。</p>
-<p>如果我们想通过一个函数改变一个数组的值，有两种方法</p>
-<ol>
-<li>将这个数组的切片做为参数传给函数</li>
-<li>将这个数组的指针做为参数传给函数</li>
-</ol>
-<p>尽管二者都可以实现我们的目的，但是按照 Go 语言的使用习惯，建议使用第一种方法，因为第一种方法，写出来的代码会更加简洁，易读。具体你可以参数下面两种方法的代码实现</p>
-<p><strong>使用切片</strong></p>
-<pre><code class="language-go">func modify(sls []int) {  
-    sls[0] = 90
-}
+<p>再举个例子，使用 goto 实现 类型 break 的效果。</p>
+<pre><code class="language-go">import &quot;fmt&quot;
 
-func main() {  
-    a := [3]int{89, 90, 91}
-    modify(a[:])
-    fmt.Println(a)
+func main() {
+    i := 1
+    for {
+        if i &gt; 5 {
+            goto flag
+        }
+        fmt.Println(i)
+        i++
+    }
+flag:
 }
 </code></pre>
-<p><strong>使用指针</strong></p>
-<pre><code class="language-go">func modify(arr *[3]int) {  
-    (*arr)[0] = 90
-}
+<p>输出如下</p>
+<pre><code>1
+2
+3
+4
+5
+</code></pre>
+<p>最后再举个例子，使用 goto 实现 类型 continue的效果，打印 1到10 的所有偶数。</p>
+<pre><code class="language-go">import &quot;fmt&quot;
 
-func main() {  
-    a := [3]int{89, 90, 91}
-    modify(&amp;a)
-    fmt.Println(a)
+func main() {
+    i := 1
+flag:
+    for i &lt;= 10 {
+        if i%2 == 1 {
+            i++
+            goto flag
+        }
+        fmt.Println(i)
+        i++
+    }
 }
+</code></pre>
+<p>输出如下</p>
+<pre><code>2
+4
+6
+8
+10
+</code></pre>
+<h2 id="3">3. 注意事项</h2>
+<p>goto语句与标签之间不能有变量声明，否则编译错误。</p>
+<pre><code class="language-go">import &quot;fmt&quot;
+
+func main() {
+    fmt.Println(&quot;start&quot;)
+    goto flag
+    var say = &quot;hello oldboy&quot;
+    fmt.Println(say)
+flag:
+    fmt.Println(&quot;end&quot;)
+}
+</code></pre>
+<p>编译错误</p>
+<pre><code>.\main.go:7:7: goto flag jumps over declaration of say at .\main.go:8:6
 </code></pre>
 
 

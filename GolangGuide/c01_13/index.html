@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../c01_05/">
+        <link rel="prev" href="../c01_12/">
       
       
-        <link rel="next" href="../c01_07/">
+        <link rel="next" href="../c01_14/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.12">
     
     
       
-        <title>1.6 数据类型：字典与布尔类型 - OpenPowers</title>
+        <title>1.13 流程控制：理解 select 用法 - OpenPowers</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#16" class="md-skip">
+        <a href="#113-select" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1.6 数据类型：字典与布尔类型
+              1.13 流程控制：理解 select 用法
             
           </span>
         </div>
@@ -187,7 +187,7 @@
   
     <li class="md-nav__item">
       <a href="../.." class="md-nav__link">
-        Home
+        文章目录
       </a>
     </li>
   
@@ -213,14 +213,14 @@
       
       
         <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-          C01
+          GolangGuide
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
-          C01
+          GolangGuide
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -298,93 +298,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          1.6 数据类型：字典与布尔类型
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../c01_06/" class="md-nav__link">
         1.6 数据类型：字典与布尔类型
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    1. 字典
-  </a>
-  
-    <nav class="md-nav" aria-label="1. 字典">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    声明初始化字典
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    字典的相关操作
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#key" class="md-nav__link">
-    判断 key 是否存在
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    如何对字典进行循环
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    2. 布尔类型
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -478,11 +396,94 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../c01_13/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          1.13 流程控制：理解 select 用法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         1.13 流程控制：理解 select 用法
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 最简单的例子
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 避免造成死锁
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-select" class="md-nav__link">
+    3.  select 随机性
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-select" class="md-nav__link">
+    4. select 的超时
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5. 读取/写入都可以
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6. 信道关闭也能命中
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6_1" class="md-nav__link">
+    6. 总结一下
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -550,48 +551,49 @@
       
         <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
-    1. 字典
+    1. 最简单的例子
   </a>
-  
-    <nav class="md-nav" aria-label="1. 字典">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    声明初始化字典
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    字典的相关操作
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#key" class="md-nav__link">
-    判断 key 是否存在
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    如何对字典进行循环
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#2" class="md-nav__link">
-    2. 布尔类型
+    2. 避免造成死锁
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-select" class="md-nav__link">
+    3.  select 随机性
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-select" class="md-nav__link">
+    4. select 的超时
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5. 读取/写入都可以
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6. 信道关闭也能命中
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6_1" class="md-nav__link">
+    6. 总结一下
   </a>
   
 </li>
@@ -612,200 +614,236 @@
 
 
 
-<h1 id="16">1.6 数据类型：字典与布尔类型</h1>
+<h1 id="113-select">1.13 流程控制：理解 select 用法</h1>
 <p><img alt="" src="http://image.iswbm.com/20200607145423.png" /></p>
-<h2 id="1">1. 字典</h2>
-<p>字典（Map 类型），是由若干个 <code>key:value</code> 这样的键值对映射组合在一起的数据结构。</p>
-<p>它是哈希表的一个实现，这就要求它的每个映射里的key，都是唯一的，可以使用 <code>==</code> 和 <code>!=</code> 来进行判等操作，换句话说就是key必须是可哈希的。</p>
-<p>什么叫可哈希的？简单来说，一个不可变对象，都可以用一个哈希值来唯一表示，这样的不可变对象，比如字符串类型的对象（可以说除了切片、 字典，函数之外的其他内建类型都算）。</p>
-<p>意思就是，你的 key 不能是切片，不能是字典，不能是函数。。</p>
-<p>字典由key和value组成，它们各自有各自的类型。</p>
-<p>在声明字典时，必须指定好你的key和value是什么类型的，然后使用 map 关键字来告诉Go这是一个字典。</p>
-<pre><code class="language-go">map[KEY_TYPE]VALUE_TYPE
-</code></pre>
-<h3 id="_1">声明初始化字典</h3>
-<p>三种声明并初始化字典的方法</p>
-<pre><code class="language-go">// 第一种方法
-var scores map[string]int = map[string]int{&quot;english&quot;: 80, &quot;chinese&quot;: 85}
-
-// 第二种方法
-scores := map[string]int{&quot;english&quot;: 80, &quot;chinese&quot;: 85}
-
-// 第三种方法
-scores := make(map[string]int)
-scores[&quot;english&quot;] = 80
-scores[&quot;chinese&quot;] = 85
-</code></pre>
-<p>要注意的是，第一种方法如果拆分成多步（声明、初始化、再赋值），和其他两种有很大的不一样了，相对会比较麻烦。</p>
-<pre><code class="language-go">import &quot;fmt&quot;
-
-func main() {
-    // 声明一个名为 score 的字典
-    var scores map[string]int
-
-    // 未初始化的 score 的零值为nil，无法直接进行赋值
-    if scores == nil {
-        // 需要使用 make 函数先对其初始化
-        scores = make(map[string]int)
-    }
-
-    // 经过初始化后，就可以直接赋值
-    scores[&quot;chinese&quot;] = 90
-    fmt.Println(scores)
+<p>前面写过两节关于 <code>switch-case</code> 的文章，分别是：</p>
+<p><a href="http://golang.iswbm.com/c01/c01_09.html">流程控制：switch-case</a></p>
+<p><a href="http://golang.iswbm.com/c01/c01_14.html">Go 语言中的类型断言</a></p>
+<p>今天要学习一个跟 <code>switch-case</code> 很像，但还有点<code>个人特色</code> 的 <code>select-case</code>，这一节本应该放在 <a href="http://golang.iswbm.com/c04/c04_03.html">学习 Go 协程：详解信道/通道</a> 里一起讲的，但是当时漏了，直到有读者给我提出，才注意到，今天就用这篇文章补充一下。</p>
+<p>跟 switch-case 相比，select-case 用法比较单一，它仅能用于 信道/通道 的相关操作。</p>
+<pre><code class="language-go">select {
+    case 表达式1:
+        &lt;code&gt;
+    case 表达式2:
+        &lt;code&gt;
+  default:
+    &lt;code&gt;
 }
 </code></pre>
-<h3 id="_2"><strong>字典的相关操作</strong></h3>
-<p>添加元素</p>
-<pre><code class="language-go">scores[&quot;math&quot;] = 95
+<p>接下来，我们来看几个例子帮助理解这个 select 的模型。</p>
+<h2 id="1">1. 最简单的例子</h2>
+<p>先创建两个信道，并在 select 前往 c2 发送数据</p>
+<pre><code class="language-go">package main
+
+import (
+    &quot;fmt&quot;
+)
+
+func main() {
+    c1 := make(chan string, 1)
+    c2 := make(chan string, 1)
+
+    c2 &lt;- &quot;hello&quot;
+
+    select {
+    case msg1 := &lt;-c1:
+      fmt.Println(&quot;c1 received: &quot;, msg1)
+    case msg2 := &lt;-c2:
+      fmt.Println(&quot;c2 received: &quot;, msg2)
+    default:
+      fmt.Println(&quot;No data received.&quot;)
+    }
+}
 </code></pre>
-<p>更新元素，若key已存在，则直接更新value</p>
-<pre><code class="language-go">scores[&quot;math&quot;] = 100
+<p>在运行 select 时，会遍历所有（如果有机会的话）的 case 表达式，只要有一个信道有接收到数据，那么 select 就结束，所以输出如下</p>
+<pre><code>c2 received:  hello
 </code></pre>
-<p>读取元素，直接使用 <code>[key]</code> 即可 ，如果 key 不存在，也不报错，会返回其value-type 的零值。</p>
-<pre><code class="language-go">fmt.Println(scores[&quot;math&quot;])
+<h2 id="2">2. 避免造成死锁</h2>
+<p>select 在执行过程中，必须命中其中的某一分支。</p>
+<p>如果在遍历完所有的 case 后，若没有命中（<code>命中</code>：也许这样描述不太准确，我本意是想说可以执行信道的操作语句）任何一个 case 表达式，就会进入 default 里的代码分支。</p>
+<p>但如果你没有写 default 分支，select 就会阻塞，直到有某个 case 可以命中，而如果一直没有命中，select 就会抛出 <code>deadlock</code> 的错误，就像下面这样子。</p>
+<pre><code class="language-go">package main
+
+import (
+    &quot;fmt&quot;
+)
+
+func main() {
+    c1 := make(chan string, 1)
+    c2 := make(chan string, 1)
+
+    // c2 &lt;- &quot;hello&quot;
+
+    select {
+    case msg1 := &lt;-c1:
+        fmt.Println(&quot;c1 received: &quot;, msg1)
+    case msg2 := &lt;-c2:
+        fmt.Println(&quot;c2 received: &quot;, msg2)
+        // default:
+        //  fmt.Println(&quot;No data received.&quot;)
+    }
+}
+
 </code></pre>
-<p>删除元素，使用 delete 函数，如果 key 不存在，delete 函数会静默处理，不会报错。</p>
-<pre><code class="language-go">delete(scores, &quot;math&quot;)
+<p>运行后输出如下</p>
+<pre><code>fatal error: all goroutines are asleep - deadlock!
+
+goroutine 1 [select]:
+main.main()
+        /Users/MING/GolandProjects/golang-test/main.go:13 +0x10f
+exit status 2
 </code></pre>
-<p>当访问一个不存在的key时，并不会直接报错，而是会返回这个 value 的零值，如果 value的类型是int，就返回0。</p>
+<p><strong>解决这个问题的方法有两种</strong></p>
+<p>一个是，养成好习惯，在 select 的时候，也写好 default 分支代码，尽管你 default 下没有写任何代码。</p>
+<pre><code class="language-go">package main
+
+import (
+    &quot;fmt&quot;
+)
+
+func main() {
+    c1 := make(chan string, 1)
+    c2 := make(chan string, 1)
+
+  // c2 &lt;- &quot;hello&quot;
+
+    select {
+    case msg1 := &lt;-c1:
+        fmt.Println(&quot;c1 received: &quot;, msg1)
+    case msg2 := &lt;-c2:
+        fmt.Println(&quot;c2 received: &quot;, msg2)
+    default:
+
+    }
+}
+</code></pre>
+<p>另一个是，让其中某一个信道可以接收到数据</p>
+<pre><code class="language-go">package main
+
+import (
+    &quot;fmt&quot;
+    &quot;time&quot;
+)
+
+func main() {
+    c1 := make(chan string, 1)
+    c2 := make(chan string, 1)
+
+  // 开启一个协程，可以发送数据到信道
+    go func() {
+        time.Sleep(time.Second * 1)
+        c2 &lt;- &quot;hello&quot;
+    }()
+
+    select {
+    case msg1 := &lt;-c1:
+        fmt.Println(&quot;c1 received: &quot;, msg1)
+    case msg2 := &lt;-c2:
+        fmt.Println(&quot;c2 received: &quot;, msg2)
+    }
+}
+
+</code></pre>
+<h2 id="3-select">3.  select 随机性</h2>
+<p>之前学过 switch 的时候，知道了 switch 里的 case 是顺序执行的，但在 select 里却不是。</p>
+<p>通过下面这个例子的执行结果就可以看出</p>
+<p><img alt="" src="http://image.iswbm.com/20200402215126.png" /></p>
+<h2 id="4-select">4. select 的超时</h2>
+<p>当 case 里的信道始终没有接收到数据时，而且也没有 default 语句时，select 整体就会阻塞，但是有时我们并不希望 select 一直阻塞下去，这时候就可以手动设置一个超时时间。</p>
+<pre><code class="language-go">package main
+
+import (
+    &quot;fmt&quot;
+    &quot;time&quot;
+)
+
+func makeTimeout(ch chan bool, t int) {
+    time.Sleep(time.Second * time.Duration(t))
+    ch &lt;- true
+}
+
+func main() {
+    c1 := make(chan string, 1)
+    c2 := make(chan string, 1)
+    timeout := make(chan bool, 1)
+
+    go makeTimeout(timeout, 2)
+
+    select {
+    case msg1 := &lt;-c1:
+        fmt.Println(&quot;c1 received: &quot;, msg1)
+    case msg2 := &lt;-c2:
+        fmt.Println(&quot;c2 received: &quot;, msg2)
+    case &lt;-timeout:
+        fmt.Println(&quot;Timeout, exit.&quot;)
+    }
+}
+</code></pre>
+<p>输出如下</p>
+<pre><code>Timeout, exit.
+</code></pre>
+<h2 id="5">5. 读取/写入都可以</h2>
+<p>上面例子里的 case，好像都只从信道中读取数据，但实际上，select 里的 case 表达式只要求你是对信道的操作即可，不管你是往信道写入数据，还是从信道读出数据。</p>
+<pre><code class="language-go">package main
+
+import (
+    &quot;fmt&quot;
+)
+
+func main() {
+    c1 := make(chan int, 2)
+
+    c1 &lt;- 2
+    select {
+    case c1 &lt;- 4:
+        fmt.Println(&quot;c1 received: &quot;, &lt;-c1)
+        fmt.Println(&quot;c1 received: &quot;, &lt;-c1)
+    default:
+        fmt.Println(&quot;channel blocking&quot;)
+    }
+}
+</code></pre>
+<p>输出如下</p>
+<pre><code>c1 received:  2
+c1 received:  4
+</code></pre>
+<h2 id="6">6. 信道关闭也能命中</h2>
+<p>上面的例子基本都是信道有数据可读取、或者信道可写入数据。其实当一个信道被 close 后，select 也能命中。</p>
+<p>举个例子</p>
 <pre><code class="language-go">package main
 
 import &quot;fmt&quot;
 
-func main() {
-    scores := make(map[string]int)
-    fmt.Println(scores[&quot;english&quot;]) // 输出 0
-}
-</code></pre>
-<h3 id="key">判断 key 是否存在</h3>
-<p>当key不存在，会返回value-type的零值 ，所以你不能通过返回的结果是否是零值来判断对应的 key 是否存在，因为 key 对应的 value 值可能恰好就是零值。</p>
-<p>其实字典的下标读取可以返回两个值，使用第二个返回值都表示对应的 key 是否存在，若存在ok为true，若不存在，则ok为false</p>
-<pre><code class="language-go">import &quot;fmt&quot;
-
-func main() {
-    scores := map[string]int{&quot;english&quot;: 80, &quot;chinese&quot;: 85}
-    math, ok := scores[&quot;math&quot;]
-    if ok {
-        fmt.Printf(&quot;math 的值是: %d&quot;, math)
-    } else {
-        fmt.Println(&quot;math 不存在&quot;)
-    }
-}
-</code></pre>
-<p>我们将上面的代码再优化一下</p>
-<pre><code class="language-go">import &quot;fmt&quot;
-
-func main() {
-    scores := map[string]int{&quot;english&quot;: 80, &quot;chinese&quot;: 85}
-    if math, ok := scores[&quot;math&quot;]; ok {
-        fmt.Printf(&quot;math 的值是: %d&quot;, math)
-    } else {
-        fmt.Println(&quot;math 不存在&quot;)
-    }
-}
-</code></pre>
-<h3 id="_3"><strong>如何对字典进行循环</strong></h3>
-<p>Go 语言中没有提供类似 Python 的  keys() 和 values() 这样方便的函数，想要获取，你得自己循环。</p>
-<p>循环还分三种</p>
-<ol>
-<li>获取 key 和 value</li>
-</ol>
-<pre><code class="language-go">import &quot;fmt&quot;
-
-func main() {
-    scores := map[string]int{&quot;english&quot;: 80, &quot;chinese&quot;: 85}
-
-    for subject, score := range scores {
-        fmt.Printf(&quot;key: %s, value: %d\n&quot;, subject, score)
-    }
-}
-</code></pre>
-<ol>
-<li>只获取key，这里注意不用占用符。</li>
-</ol>
-<pre><code class="language-go">import &quot;fmt&quot;
-
-func main() {
-    scores := map[string]int{&quot;english&quot;: 80, &quot;chinese&quot;: 85}
-
-    for subject := range scores {
-        fmt.Printf(&quot;key: %s\n&quot;, subject)
-    }
-}
-</code></pre>
-<ol>
-<li>只获取 value，用一个占位符替代。</li>
-</ol>
-<pre><code class="language-go">import &quot;fmt&quot;
-
-func main() {
-    scores := map[string]int{&quot;english&quot;: 80, &quot;chinese&quot;: 85}
-
-    for _, score := range scores {
-        fmt.Printf(&quot;value: %d\n&quot;, score)
-    }
-}
-</code></pre>
-<h2 id="2">2. 布尔类型</h2>
-<p>关于布尔值，无非就两个值：true 和 false。只是这两个值，在不同的语言里可能不同。</p>
-<p>在 Python 中，真值用 True 表示，与 1 相等，假值用 False 表示，与 0 相等</p>
-<pre><code class="language-python">&gt;&gt;&gt; True == 1
-True
-&gt;&gt;&gt; False == 0
-True
-&gt;&gt;&gt; 
-</code></pre>
-<p>而在 Go 中，真值用 true 表示，不但不与 1 相等，并且更加严格，不同类型无法进行比较，而假值用 false 表示，同样与 0 无法比较。</p>
-<p>如下图所示，Goland 直接波浪线提示类型不匹配，不能比较。</p>
-<p><img alt="" src="http://image.iswbm.com/20200106201856.png" /></p>
-<p>Go 中确实不如 Python 那样灵活，bool 与 int 不能直接转换，如果要转换，需要你自己实现函数。</p>
-<p><strong>bool 转 int</strong></p>
-<pre><code class="language-go">func bool2int(b bool) int {
-    if b {
-        return 1
-    }
-    return 0
-}
-</code></pre>
-<p><strong>int 转 bool</strong></p>
-<pre><code class="language-go">func int2bool(i int) bool { 
-    return i != 0 
-}
-</code></pre>
-<p>在 Python 中使用 not 对逻辑值取反，而 Go 中使用 <code>!</code> 符号</p>
-<pre><code class="language-go">import &quot;fmt&quot;
-
-var male bool = true
 func main()  {
-    fmt.Println( !male == false)
-    // 或者
-    fmt.Println( male != false)
+    c1 := make(chan int, 1)
+    c2 := make(chan int, 1)
+    close(c1)
+    for {
+        select {
+        case &lt;-c1:
+            fmt.Println(&quot;stop&quot;);
+                        return
+        case &lt;-c2:
+            fmt.Println(&quot;hhh&quot;)
+
+        }
+    }
 }
 
-// output: true
 </code></pre>
-<p>一个 if 判断语句，有可能不只一个判断条件，在 Python 中是使用 <code>and</code> 和 <code>or</code> 来执行逻辑运算</p>
-<pre><code class="language-python">&gt;&gt;&gt; age = 15
-&gt;&gt;&gt; gender = &quot;male&quot;
-&gt;&gt;&gt; 
-&gt;&gt;&gt; gender == &quot;male&quot; and age &gt;18
-False
+<p>执行 <code>go run main.go</code> 后，会立马输出 stop</p>
+<pre><code>$ go run main.go 
+stop
 </code></pre>
-<p>而在 Go 语言中，则使用 <code>&amp;&amp;</code> 表示<code>且</code>，用 <code>||</code> 表示<code>或</code>，并且有短路行为（即左边表达式已经可以确认整个表达式的值，那么右边将不会再被求值。</p>
-<pre><code class="language-go">import &quot;fmt&quot;
-
-var age int = 15
-var gender string = &quot;male&quot;
-func main()  {
-    //  &amp;&amp; 两边的表达式都会执行
-    fmt.Println( age &gt; 18 &amp;&amp; gender == &quot;male&quot;)
-    // gender == &quot;male&quot; 并不会执行
-    fmt.Println( age &lt; 18 || gender == &quot;male&quot;)
-}
-
-// output: false
-// output: true
-</code></pre>
+<h2 id="6_1">6. 总结一下</h2>
+<p>select 与 switch 原理很相似，但它的使用场景更特殊，学习了本篇文章，你需要知道如下几点区别：</p>
+<ol>
+<li>select 只能用于 channel 的操作(写入/读出/关闭)，而 switch 则更通用一些；</li>
+<li>select 的 case 是随机的，而 switch 里的 case 是顺序执行；</li>
+<li>select 要注意避免出现死锁，同时也可以自行实现超时机制；</li>
+<li>select 里没有类似 switch 里的 fallthrough 的用法；</li>
+<li>select 不能像 switch 一样接函数或其他表达式。</li>
+</ol>
 
 
 
